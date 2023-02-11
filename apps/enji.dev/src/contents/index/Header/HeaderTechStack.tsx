@@ -55,7 +55,7 @@ function HeaderTechStack() {
           </div>
         </m.li>
         <m.li variants={animation}>
-          <div className={clsx('transition duration-200 hover:text-[#0055FF]')}>
+          <div className={clsx('transition duration-200 hover:text-[#2b7626]')}>
             <NodeJs className={clsx('h-6 w-6')} />
           </div>
         </m.li>

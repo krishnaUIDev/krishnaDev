@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { GitHubIcon, TwitterIcon } from '@/components/Icons';
+import { GitHubIcon, TwitterIcon, LoginIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
 import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
 import NavLink from '@/components/navigations/NavLink';
@@ -77,6 +77,13 @@ function Navbar() {
                 href="https://github.com/krishnaUIDev"
                 icon={<GitHubIcon className={clsx('h-5 w-5')} />}
                 title="GitHub"
+              />
+            </li>
+            <li className={clsx('hidden', 'sm:block')}>
+              <NavIcon
+                href="https://twitter.com/krishnakondoju"
+                icon={<LoginIcon className={clsx('h-5 w-5')} />}
+                title="Twitter"
               />
             </li>
             <li className={clsx('hidden', 'sm:block')}>

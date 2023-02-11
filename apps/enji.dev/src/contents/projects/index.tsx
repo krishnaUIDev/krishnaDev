@@ -15,9 +15,9 @@ function ProjectsContents() {
   return (
     <>
       <SectionTitle
-        title="The dynamic accent colors."
-        caption="tailwindcss-accent"
-        description="Add accent colors for dynamic, flexible color use in your Tailwind CSS project."
+        title="UI-WebKit"
+        caption="UI-WebKit"
+        description="Contains JS Framework related material."
         button={{
           title: 'learn more',
           href: '/docs/tailwindcss-accent',
@@ -30,14 +30,14 @@ function ProjectsContents() {
               <SectionButton
                 title="Available on GitHub"
                 icon={<GitHubIcon className={clsx('my-2 h-16 w-16')} />}
-                description="Access powerful and flexible package on GitHub with MIT license."
+                description="Access powerful FrontEnd material on GitHub with MIT license."
                 active={currentState === 'github'}
                 onClick={() => setCurrentState('github')}
               />
               <SectionButton
                 title="npm package"
                 icon={<NpmIcon className={clsx('my-2 h-16 w-16')} />}
-                description="Install and use the package with ease thanks to its typed options."
+                description="Install and use the package"
                 active={currentState === 'npm'}
                 onClick={() => setCurrentState('npm')}
               />
@@ -51,28 +51,28 @@ function ProjectsContents() {
                   browserTabs={[
                     {
                       icon: <GitHubIcon className="h-4 w-4" />,
-                      title: 'enjidev/tailwindcss-accent - GitHub',
+                      title: 'krishnaUIDev/UI-Kit - GitHub',
                       isActive: currentState === 'github',
                     },
                     {
                       icon: <NpmIcon className="h-4 w-4" />,
-                      title: 'tailwindcss-accent - npm',
+                      title: 'country-state - npm',
                       isActive: currentState === 'npm',
                     },
                   ]}
                 >
                   {currentState === 'github' && (
                     <GitHubWireframe
-                      author="enjidev"
+                      author="krishnaUIDev"
                       license="MIT"
-                      repository="tailwindcss-accent"
-                      description="Adds accent colors for more dynamic and flexible color utilization."
+                      repository="UI-Kit"
+                      description="Contains JS Framework related material."
                     />
                   )}
                   {currentState === 'npm' && (
                     <NpmWireframe
-                      packageName="tailwindcss-accent"
-                      description="Adds accent colors for more dynamic and flexible color utilization."
+                      packageName="country-state"
+                      description="mapping for country with state codes"
                       isWithTypeScript
                     />
                   )}
