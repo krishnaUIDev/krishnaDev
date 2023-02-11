@@ -21,7 +21,7 @@ function Head({
 
   const htmlTitle = overrideTitle
     ? title
-    : `${title} — Enji · Front-End Developer`;
+    : `${title} — Krishna · Front-End Developer`;
 
   return (
     <NextHead>

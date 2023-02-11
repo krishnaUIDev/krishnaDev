@@ -557,7 +557,7 @@ export function TailwindCssIcon(props: ComponentProps<'svg'>) {
   );
 }
 
-export function FramerMotionIcon(props: ComponentProps<'svg'>) {
+export function NodeJs(props: ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -566,7 +566,7 @@ export function FramerMotionIcon(props: ComponentProps<'svg'>) {
       fill="currentColor"
       {...props}
     >
-      <title>Framer Motion Icon</title>
+      <title>NodeJS</title>
       <path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z" />
     </svg>
   );

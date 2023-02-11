@@ -3,7 +3,7 @@ import { m } from 'framer-motion';
 
 import {
   FigmaIcon,
-  FramerMotionIcon,
+  NodeJs,
   NextJsIcon,
   ReactIcon,
   TailwindCssIcon,
@@ -56,7 +56,7 @@ function HeaderTechStack() {
         </m.li>
         <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#0055FF]')}>
-            <FramerMotionIcon className={clsx('h-6 w-6')} />
+            <NodeJs className={clsx('h-6 w-6')} />
           </div>
         </m.li>
         <m.li variants={animation}>
@@ -76,11 +76,11 @@ function HeaderTechStack() {
             <VSCodeIcon className={clsx('h-6 w-6')} />
           </div>
         </m.li>
-        <m.li variants={animation}>
+        {/* <m.li variants={animation}>
           <div className={clsx('transition duration-200 hover:text-[#F24E1E]')}>
             <FigmaIcon className={clsx('h-6 w-6')} />
           </div>
-        </m.li>
+        </m.li> */}
       </m.ul>
     </div>
   );
