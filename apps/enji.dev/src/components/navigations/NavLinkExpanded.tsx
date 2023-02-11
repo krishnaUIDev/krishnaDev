@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 import { ChevronRightIcon } from '@/components/Icons';
 import NavLink from '@/components/navigations/NavLink';
@@ -12,6 +13,8 @@ interface NavLinkExpandedProps {
 }
 
 function NavLinkExpanded({ title, items }: NavLinkExpandedProps) {
+  const router = useRouter();
+  const pathname = router?.pathname;
   return (
     <div className={clsx('flex')}>
       <div
@@ -26,7 +29,11 @@ function NavLinkExpanded({ title, items }: NavLinkExpandedProps) {
         {items.map((item, idx) => (
           <React.Fragment key={item.href}>
             <li>
-              <NavLink title={item.title} href={item.href} />
+              <NavLink
+                title={item.title}
+                href={item.href}
+                active={pathname === item.href}
+              />
             </li>
             {idx !== items.length - 1 && (
               <li>

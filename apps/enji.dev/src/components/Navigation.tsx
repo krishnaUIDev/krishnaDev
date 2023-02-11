@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import { useRouter } from 'next/router';
 
 import { GitHubIcon, TwitterIcon, LoginIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
@@ -19,6 +20,8 @@ const workLinks = [
 
 function Navbar() {
   const isScrolled = useOnScroll(0);
+  const router = useRouter();
+  const pathname = router?.pathname;
 
   return (
     <header
@@ -48,13 +51,25 @@ function Navbar() {
             <NavLogo href="/" title="Home" />
             <ul className={clsx('flex items-center', 'md:gap-1')}>
               <li>
-                <NavLink title="Projects" href="/projects" />
+                <NavLink
+                  title="Projects"
+                  href="/projects"
+                  active={pathname === '/projects'}
+                />
               </li>
               <li>
-                <NavLink title="Blog" href="/blog" />
+                <NavLink
+                  title="Blog"
+                  href="/blog"
+                  active={pathname === '/blog'}
+                />
               </li>
               <li>
-                <NavLink title="T.I.L" href="/today-i-learned" />
+                <NavLink
+                  title="T.I.L"
+                  href="/today-i-learned"
+                  active={pathname === '/today-i-learned'}
+                />
               </li>
               <li className={clsx('lg:hidden')} data-accent="blue">
                 <NavLinkDropdown title="Work" items={workLinks} />
