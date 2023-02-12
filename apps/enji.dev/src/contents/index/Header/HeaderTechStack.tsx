@@ -2,9 +2,8 @@ import clsx from 'clsx';
 import { m } from 'framer-motion';
 
 import {
-  FigmaIcon,
-  NodeJs,
   NextJsIcon,
+  NodeJs,
   ReactIcon,
   TailwindCssIcon,
   TypeScriptIcon,

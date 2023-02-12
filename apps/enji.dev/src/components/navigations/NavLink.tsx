@@ -10,8 +10,7 @@ export type NavLinkProps = {
   active?: boolean;
 };
 
-function NavLink({ title, href, icon = null, active }: NavLinkProps) {
-  console.log(active);
+function NavLink({ title, href, icon = null, active = false }: NavLinkProps) {
   return (
     <Link href={href} className={clsx(`nav-link ${active && 'nav-active'}`)}>
       {title}

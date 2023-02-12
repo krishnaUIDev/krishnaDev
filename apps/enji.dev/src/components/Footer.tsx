@@ -1,12 +1,7 @@
 import clsx from 'clsx';
 import Link from 'next/link';
 
-import {
-  ExternalLink,
-  FigmaIcon,
-  GitHubIcon,
-  TwitterIcon,
-} from '@/components/Icons';
+import { ExternalLink, GitHubIcon, TwitterIcon } from '@/components/Icons';
 
 import dayjs from '@/utils/dayjs';
 
