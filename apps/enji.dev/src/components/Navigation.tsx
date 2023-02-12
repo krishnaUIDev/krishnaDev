@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/router';
 import { signIn, useSession } from 'next-auth/react';
 
-import Signout from '@/components/authentication/signout';
+import Signout from '@/components/authentication/Signout';
 import { GitHubIcon, TwitterIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
 import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
