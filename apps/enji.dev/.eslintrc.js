@@ -6,4 +6,8 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
+  rules: {
+    'vars-on-top': 'off',
+    'no-var': 'off',
+  },
 };

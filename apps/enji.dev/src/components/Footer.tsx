@@ -197,29 +197,6 @@ function Footer() {
                   ]}
                 />
               </div>
-              <div className={clsx('flex', 'sm:gap-16')}>
-                <FooterGroup
-                  title="This Site"
-                  links={
-                    [
-                      // {
-                      //   title: 'Design Concept',
-                      //   href: 'https://www.figma.com/community/file/1176392613303840973',
-                      //   isInternal: false,
-                      // },
-                      // {
-                      //   title: 'Source Code',
-                      //   href: 'https://github.com/enjidev/enji.dev',
-                      //   isInternal: false,
-                      // },
-                      // {
-                      //   title: 'Credits',
-                      //   href: '/credits',
-                      // },
-                    ]
-                  }
-                />
-              </div>
             </div>
           </div>
         </div>
