@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import { useRouter } from 'next/router';
+import { signIn, useSession } from 'next-auth/react';
 
+import Signout from '@/components/authentication/signout';
 import { GitHubIcon, TwitterIcon } from '@/components/Icons';
 import NavIcon from '@/components/navigations/NavIcon';
 import NavIconQuickAccess from '@/components/navigations/NavIconQuickAccess';
@@ -8,10 +10,8 @@ import NavLink from '@/components/navigations/NavLink';
 import NavLinkDropdown from '@/components/navigations/NavLinkDropdown';
 import NavLinkExpanded from '@/components/navigations/NavLinkExpanded';
 import NavLogo from '@/components/navigations/NavLogo';
-import { signIn, useSession } from 'next-auth/react';
 
 import useOnScroll from '@/hooks/useOnScroll';
-import Signout from '@/components/authentication/signout';
 
 const workLinks = [
   { title: 'Skills & Tools', href: '/work/skills-and-tools' },
@@ -25,8 +25,7 @@ function Navbar() {
   const router = useRouter();
   const pathname = router?.pathname;
   const { data: session, status } = useSession();
-  console.log(session);
-  console.log(status);
+
   return (
     <header
       className={clsx('fixed top-0 right-0 left-0 z-[1000]', 'fm:absolute')}
@@ -102,6 +101,7 @@ function Navbar() {
               <button
                 className={clsx('button button--outline min-w-[90px]')}
                 onClick={() => signIn()}
+                type="button"
               >
                 Sign In
               </button>

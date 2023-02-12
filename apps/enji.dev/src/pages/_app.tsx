@@ -1,12 +1,13 @@
 import { Analytics } from '@vercel/analytics/react';
+import { SessionProvider } from 'next-auth/react';
 
 import RootLayout from '@/components/layouts/Root';
 import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';
-import type { Session } from 'next-auth';
-import { SessionProvider } from 'next-auth/react';
+
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
+import type { Session } from 'next-auth';
 import type { ReactElement, ReactNode } from 'react';
 
 import '@/styles/main.css';
@@ -29,7 +30,7 @@ function App({
   pageProps: { session, ...pageProps },
   router,
 }: AppPropsWithLayout) {
-  let getLayout: any;
+  let getLayout;
 
   if (router.query.simpleLayout) {
     getLayout = (page: ReactElement) => <main>{page}</main>;
