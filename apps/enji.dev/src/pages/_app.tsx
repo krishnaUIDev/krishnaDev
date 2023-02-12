@@ -3,7 +3,8 @@ import { Analytics } from '@vercel/analytics/react';
 import RootLayout from '@/components/layouts/Root';
 import WithNavigationFooter from '@/components/layouts/WithNavigationFooter';
 import Provider from '@/providers';
-
+import type { Session } from 'next-auth';
+import { SessionProvider } from 'next-auth/react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import type { ReactElement, ReactNode } from 'react';
@@ -16,14 +17,19 @@ type NextPageWithLayout<P = object, IP = P> = NextPage<P, IP> & {
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
+  session: Session;
 };
 
 function getDefaultLayout(page: ReactElement): ReactNode {
   return <WithNavigationFooter>{page}</WithNavigationFooter>;
 }
 
-function App({ Component, pageProps, router }: AppPropsWithLayout) {
-  let getLayout;
+function App({
+  Component,
+  pageProps: { session, ...pageProps },
+  router,
+}: AppPropsWithLayout) {
+  let getLayout: any;
 
   if (router.query.simpleLayout) {
     getLayout = (page: ReactElement) => <main>{page}</main>;
@@ -34,13 +40,15 @@ function App({ Component, pageProps, router }: AppPropsWithLayout) {
   }
 
   return (
-    <Provider>
-      <RootLayout>
-        {/* eslint-disable-next-line react/jsx-props-no-spreading */}
-        {getLayout(<Component {...pageProps} />)}
-        <Analytics />
-      </RootLayout>
-    </Provider>
+    <SessionProvider session={session}>
+      <Provider>
+        <RootLayout>
+          {/* eslint-disable-next-line react/jsx-props-no-spreading */}
+          {getLayout(<Component {...pageProps} />)}
+          <Analytics />
+        </RootLayout>
+      </Provider>
+    </SessionProvider>
   );
 }
 
