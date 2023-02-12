@@ -168,8 +168,7 @@ function Footer() {
                     { title: 'Experience', href: '/work/experience' },
                     {
                       title: 'Services',
-                      href: '/work/services',
-                      label: 'soon',
+                      href: '/services',
                     },
                     {
                       title: 'Skills and Tools',
