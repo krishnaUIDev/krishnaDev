@@ -10,5 +10,5 @@ A personal website with a blog, project showcase, and work information.
 - ➰ Framer Motion
 - 🍃 Tailwind CSS
 - ✍ MDX
-
-[FIND OUT MORE →]
+- 🔏 Next-auth, Auth 0
+- 🌐 Vercel
