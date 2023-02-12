@@ -1,15 +1,15 @@
-import ServicesContents from '@/contents/services';
+import PricingContents from '@/contents/pricing';
 import Page from '@/contents-layouts/Page';
 
 function Services() {
   return (
     <Page
       frontMatter={{
-        title: 'Services',
-        description: 'Showcase of my services.',
+        title: 'Pricing',
+        description: 'Pricing plans for business',
       }}
     >
-      <ServicesContents />
+      <PricingContents />
     </Page>
   );
 }

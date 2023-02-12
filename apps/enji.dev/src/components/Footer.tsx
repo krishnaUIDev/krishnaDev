@@ -171,6 +171,10 @@ function Footer() {
                       href: '/services',
                     },
                     {
+                      title: 'WebStore',
+                      href: '/webstore',
+                    },
+                    {
                       title: 'Skills and Tools',
                       href: '/work/skills-and-tools',
                     },
