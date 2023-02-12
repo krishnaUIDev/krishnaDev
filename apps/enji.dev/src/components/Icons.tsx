@@ -532,6 +532,7 @@ export function LoginIcon(props: ComponentProps<'svg'>) {
     </svg>
   );
 }
+
 export function TypeScriptIcon(props: ComponentProps<'svg'>) {
   return (
     <svg

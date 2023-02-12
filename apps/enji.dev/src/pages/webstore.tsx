@@ -7,7 +7,7 @@ function WebStore() {
     <Page
       frontMatter={{
         title: 'WebStore',
-        description: 'Showcase of my services.',
+        description: '',
       }}
       // headerImage={<HeaderImage />}
     >
