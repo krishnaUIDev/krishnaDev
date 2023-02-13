@@ -1,4 +1,5 @@
 import Head from '@/components/meta/Head';
+import { createClient } from 'next-sanity';
 
 import { getBaseUrl } from '@/helpers/url';
 
@@ -16,6 +17,23 @@ function Index() {
       <IndexContents />
     </>
   );
+}
+
+const client = createClient({
+  projectId: 'lqz08o01',
+  dataset: 'production',
+  apiVersion: '2021-10-14',
+  useCdn: false,
+});
+
+export async function getStaticProps() {
+  const pets = await client.fetch(`*[_type == "pet"]`);
+
+  return {
+    props: {
+      pets,
+    },
+  };
 }
 
 export default Index;

@@ -15,3 +15,5 @@ A personal website with a blog, project showcase, and work information.
 - 🌐 Vercel
 - pnpm
 - Prisma
+- Sanity
+- Groq
