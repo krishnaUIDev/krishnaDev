@@ -7,7 +7,7 @@ A personal website with a blog, project showcase, and work information.
 ### Tech Stack
 
 - 🚀 Next.js + TypeScript
-- 🛠️ Turbo
+- 🛠️ Turbo (Monorepo)
 - ➰ Framer Motion
 - 🍃 Tailwind CSS
 - ✍ MDX

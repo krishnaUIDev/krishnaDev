@@ -1,5 +1,5 @@
 {
-  "name": "sanity",
+  "name": "krishnasanity",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -7,7 +7,7 @@
   "author": "Krishna Kanth <krishna.kondoju007@gmail.com>",
   "license": "UNLICENSED",
   "scripts": {
-    "start": "sanity start",
+    "sanity": "sanity start",
     "build": "sanity build"
   },
   "keywords": [

@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "sanity"
+    "name": "krishna-sanity"
   },
   "api": {
-    "projectId": "o649b5h2",
+    "projectId": "li39u3cj",
     "dataset": "production"
   },
   "plugins": [
