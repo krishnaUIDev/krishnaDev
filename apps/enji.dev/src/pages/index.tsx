@@ -1,11 +1,16 @@
 import Head from '@/components/meta/Head';
 import sanity from '@/lib/sanity';
 import { getBaseUrl } from '@/helpers/url';
-
+import { GetServerSideProps } from 'next';
 import IndexContents from '@/contents/index';
+import { Experince } from '@/types/typings';
 
-function Index({ movies }) {
-  console.log(movies);
+interface HomeProps {
+  experince: Experince;
+}
+
+const Home = ({ experince }: HomeProps) => {
+  console.log(experince);
   return (
     <>
       <Head
@@ -17,23 +22,24 @@ function Index({ movies }) {
       <IndexContents />
     </>
   );
-}
+};
 
-// const client = createClient({
-//   projectId: 'lqz08o01',
-//   dataset: 'production',
-//   apiVersion: '2021-10-14',
-//   useCdn: false,
-// });
+export default Home;
 
-export async function getStaticProps() {
-  const movies = await sanity.fetch(`*[_type == "pet"]`);
-
+export const getServerSideProps: GetServerSideProps = async () => {
+  const query = `*[_type == "experience"] {
+    _id,
+    company,
+    description[] {children[] {_key, text }},
+    designation,
+    location,  
+    roles[] { children [] { text } } ,
+    skills   
+ }`;
+  const experince = await sanity.fetch(query);
   return {
     props: {
-      movies,
+      experince,
     },
   };
-}
-
-export default Index;
+};
