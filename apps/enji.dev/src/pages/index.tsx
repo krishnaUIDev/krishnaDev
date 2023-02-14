@@ -1,11 +1,11 @@
 import Head from '@/components/meta/Head';
-import { createClient } from 'next-sanity';
-
+import sanity from '@/lib/sanity';
 import { getBaseUrl } from '@/helpers/url';
 
 import IndexContents from '@/contents/index';
 
-function Index() {
+function Index({ movies }) {
+  console.log(movies);
   return (
     <>
       <Head
@@ -19,19 +19,19 @@ function Index() {
   );
 }
 
-const client = createClient({
-  projectId: 'lqz08o01',
-  dataset: 'production',
-  apiVersion: '2021-10-14',
-  useCdn: false,
-});
+// const client = createClient({
+//   projectId: 'lqz08o01',
+//   dataset: 'production',
+//   apiVersion: '2021-10-14',
+//   useCdn: false,
+// });
 
 export async function getStaticProps() {
-  const pets = await client.fetch(`*[_type == "pet"]`);
+  const movies = await sanity.fetch(`*[_type == "pet"]`);
 
   return {
     props: {
-      pets,
+      movies,
     },
   };
 }

@@ -13,7 +13,6 @@
       "dependsOn": ["db:generate"],
       "cache": false
     },
-    "sanity": {},
     "clean": {
       "cache": false
     },
