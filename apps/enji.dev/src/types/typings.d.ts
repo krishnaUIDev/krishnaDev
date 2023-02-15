@@ -7,26 +7,9 @@ interface Image {
 export interface Experince {
   _id: string;
   company: string;
-  description: Description[];
+  description: string[];
   designation: string;
   location: string;
-  roles: Role[];
+  roles: string[];
   skills: string[];
-}
-
-interface Description {
-  children: DescriptionChild[];
-}
-
-interface DescriptionChild {
-  _key: string;
-  text: string;
-}
-
-interface Role {
-  children: RoleChild[];
-}
-
-interface RoleChild {
-  text: string;
 }

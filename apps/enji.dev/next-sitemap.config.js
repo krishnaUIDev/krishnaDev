@@ -33,6 +33,10 @@ module.exports = {
       return defaultValue(0.8);
     }
 
+    if (path === '/webstore') {
+      return defaultValue(0.9);
+    }
+
     return defaultValue();
   },
 };

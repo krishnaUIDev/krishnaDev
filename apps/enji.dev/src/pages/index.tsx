@@ -4,13 +4,13 @@ import { getBaseUrl } from '@/helpers/url';
 import { GetServerSideProps } from 'next';
 import IndexContents from '@/contents/index';
 import { Experince } from '@/types/typings';
+import { exerienceQuery } from '@/queries';
 
 interface HomeProps {
   experince: Experince;
 }
 
 const Home = ({ experince }: HomeProps) => {
-  console.log(experince);
   return (
     <>
       <Head
@@ -27,16 +27,7 @@ const Home = ({ experince }: HomeProps) => {
 export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const query = `*[_type == "experience"] {
-    _id,
-    company,
-    description[] {children[] {_key, text }},
-    designation,
-    location,  
-    roles[] { children [] { text } } ,
-    skills   
- }`;
-  const experince = await sanity.fetch(query);
+  const experince = await sanity.fetch(exerienceQuery);
   return {
     props: {
       experince,

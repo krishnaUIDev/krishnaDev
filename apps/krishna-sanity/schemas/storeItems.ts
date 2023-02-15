@@ -6,38 +6,55 @@ export default defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
+      name: 'name',
       title: 'Item Name',
       type: 'string',
+    }),
+    defineField({
+      name: 'price',
+      title: 'Price',
+      type: 'number',
     }),
     defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
       options: {
-        source: 'title',
+        source: 'name',
         maxLength: 96,
       },
     }),
     defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main image',
+      name: 'imageSrc',
+      title: 'Image',
       type: 'image',
       options: {
         hotspot: true,
       },
     }),
     defineField({
+      name: 'imageAlt',
+      title: 'Image Alt',
+      type: 'string',
+    }),
+    defineField({
       name: 'categories',
       title: 'Categories',
       type: 'array',
-      of: [{type: 'reference', to: {type: 'category'}}],
+      of: [
+        {
+          type: 'string',
+        },
+      ],
+      options: {
+        list: [
+          {title: 'Electronics', value: 'Electronics'},
+          {title: 'E-books', value: 'E-books'},
+          {title: 'T-shirts', value: 'T-shirts'},
+          {title: 'Stickers', value: 'Stickers'},
+          {title: 'Misc', value: 'Misc'},
+        ],
+      },
     }),
     defineField({
       name: 'publishedAt',
@@ -53,9 +70,9 @@ export default defineType({
 
   preview: {
     select: {
-      title: 'title',
+      title: 'name',
       author: 'author.name',
-      media: 'mainImage',
+      media: 'imageSrc',
     },
     prepare(selection) {
       const {author} = selection
