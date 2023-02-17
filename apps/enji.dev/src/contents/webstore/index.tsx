@@ -69,7 +69,7 @@ const WebStoreContents = ({ items }) => {
               {product.name}
             </h2>
             <p className="mt-1 text-lg font-medium text-slate-700 dark:text-slate-300">
-              {product.price}
+              ${product.price}
             </p>
           </a>
         ))}

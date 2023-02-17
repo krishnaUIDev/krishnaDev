@@ -1,5 +1,6 @@
 export const storeItemsQuery = `*[_type == "storeItems"] {
     _id,
+    name,
     body[] { children[] { text } },
     categories,
     imageAlt,
