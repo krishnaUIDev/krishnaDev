@@ -6,7 +6,7 @@ A personal website with a blog, project showcase, and work information.
 
 # https://krishna-dev-enji-dev.vercel.app
 
-- **Framework**: 🚀 Next.js + TypeScript[https://nextjs.org/]
+- **Framework**: 🚀 [Next.js + TypeScript](https://nextjs.org/)
 - **Monorepo**:🛠️ [Turbo](https://turbo.build/)
 - **Styling**: 🍃[Tailwind CSS](https://tailwindcss.com)
 - **Animations**:➰ [Framer Motion](https://www.framer.com/)
