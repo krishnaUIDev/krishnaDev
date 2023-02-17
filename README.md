@@ -1,9 +1,5 @@
 A monorepo for my personal website and projects, built with Turborepo and pnpm.
 
-## 📘 [https://krishna-dev-enji-dev.vercel.app/]
-
-A personal website with a blog, project showcase, and work information.
-
 # https://krishna-dev-enji-dev.vercel.app
 
 - **Framework**: 🚀 [Next.js + TypeScript](https://nextjs.org/)

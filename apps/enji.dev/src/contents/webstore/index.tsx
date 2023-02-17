@@ -65,6 +65,7 @@ function WebStoreContents() {
                 src={product.imageSrc}
                 alt={product.imageAlt}
                 width={100}
+                height={100}
                 className="h-full w-full object-cover object-center group-hover:opacity-75"
               />
             </div>
