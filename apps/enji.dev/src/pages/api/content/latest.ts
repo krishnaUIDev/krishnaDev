@@ -1,24 +1,17 @@
-import { getNewPosts } from '@/lib/meta';
+// import { getNewPosts } from '@/lib/meta';
 
-import type { TApiResponse } from '@/types';
-import type { NextApiRequest, NextApiResponse } from 'next';
+// import type { TApiResponse } from '@/types';
+import type { NextApiRequest } from 'next';
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<
-    | {
-        slug: string;
-        title: string;
-        createdAt: Date;
-      }[]
-    | TApiResponse
-  >
+  res
 ) {
   try {
     if (req.method === 'GET') {
-      const newPosts = await getNewPosts();
+      // const newPosts = await getNewPosts();
 
-      res.status(200).json(newPosts);
+      res.status(200).json({});
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });
     }

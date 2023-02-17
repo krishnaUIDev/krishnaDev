@@ -1,16 +1,14 @@
-import Head from '@/components/meta/Head';
-import sanity from '@/lib/sanity';
-import { getBaseUrl } from '@/helpers/url';
 import { GetServerSideProps } from 'next';
+
+import Head from '@/components/meta/Head';
+
+import { getBaseUrl } from '@/helpers/url';
+import sanity from '@/lib/sanity';
+
 import IndexContents from '@/contents/index';
-import { Experince } from '@/types/typings';
 import { exerienceQuery } from '@/queries';
 
-interface HomeProps {
-  experince: Experince;
-}
-
-const Home = ({ experince }: HomeProps) => {
+function Home() {
   return (
     <>
       <Head
@@ -22,7 +20,7 @@ const Home = ({ experince }: HomeProps) => {
       <IndexContents />
     </>
   );
-};
+}
 
 export default Home;
 

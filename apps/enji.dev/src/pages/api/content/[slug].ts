@@ -1,47 +1,30 @@
-import { z } from 'zod';
+// import { z } from 'zod';
 
-import { getSessionId } from '@/helpers/server';
-import {
-  getContentMeta,
-  getReactions,
-  getReactionsBy,
-  getSectionMeta,
-} from '@/lib/meta';
+// import { getSessionId } from '@/helpers/server';
+// import {
+//   getContentMeta,
+//   getReactions,
+//   getReactionsBy,
+//   getSectionMeta,
+// } from '@/lib/meta';
 
-import type { TApiResponse, TContentMetaDetail } from '@/types';
-import type { NextApiRequest, NextApiResponse } from 'next';
+// import type { TApiResponse, TContentMetaDetail } from '@/types';
+import type { NextApiRequest } from 'next';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<TContentMetaDetail | TApiResponse>
-) {
-  const slug = z.string().parse(req.query.slug);
-  const sessionId = getSessionId(req);
+export default async function handler(req: NextApiRequest, res) {
+  // const slug = z.string().parse(req.query.slug);
+  // const sessionId = getSessionId(req);
 
   try {
     if (req.method === 'GET') {
-      const meta = await getContentMeta(slug);
-      const metaSection = await getSectionMeta(slug);
-      const reactionsDetail = await getReactions(slug);
-      const reactionsDetailUser = await getReactionsBy(slug, sessionId);
+      // const meta = await getContentMeta();
+      // const metaSection = await getSectionMeta();
+      // const reactionsDetail = await getReactions();
+      // const reactionsDetailUser = await getReactionsBy();
 
-      const reactionsSum =
-        reactionsDetail.AMAZED +
-        reactionsDetail.CLAPPING +
-        reactionsDetail.THINKING;
+      // const reactionsSum = ''
 
-      res.status(200).json({
-        meta: {
-          shares: meta.shares,
-          views: meta.views,
-          reactions: reactionsSum,
-          reactionsDetail,
-        },
-        metaUser: {
-          reactionsDetail: reactionsDetailUser,
-        },
-        metaSection,
-      });
+      res.status(200).json({});
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });
     }

@@ -1,3 +1,5 @@
+import NextImage from 'next/image';
+
 const products = [
   {
     id: 1,
@@ -52,16 +54,17 @@ const products = [
   // More products...
 ];
 
-const WebStoreContents = ({ items }) => {
+function WebStoreContents() {
   return (
     <div className="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
       <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {products.map((product) => (
           <a key={product.id} href={product.href} className="group">
             <div className="aspect-w-1 aspect-h-1 xl:aspect-w-7 xl:aspect-h-8 w-full overflow-hidden rounded-lg bg-gray-200">
-              <img
+              <NextImage
                 src={product.imageSrc}
                 alt={product.imageAlt}
+                width={100}
                 className="h-full w-full object-cover object-center group-hover:opacity-75"
               />
             </div>
@@ -76,6 +79,6 @@ const WebStoreContents = ({ items }) => {
       </div>
     </div>
   );
-};
+}
 
 export default WebStoreContents;

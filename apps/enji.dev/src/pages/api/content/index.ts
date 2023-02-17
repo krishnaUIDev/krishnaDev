@@ -1,17 +1,12 @@
-import { getAllContentMeta } from '@/lib/meta';
+// import { getAllContentMeta } from '@/lib/meta';
 
-import type { TApiResponse, TContentMeta } from '@/types';
-import type { NextApiRequest, NextApiResponse } from 'next';
+// import type { TApiResponse, TContentMeta } from '@/types';
+import type { NextApiRequest } from 'next';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<Record<string, TContentMeta> | TApiResponse>
-) {
+export default async function handler(req: NextApiRequest, res) {
   try {
     if (req.method === 'GET') {
-      const result = await getAllContentMeta();
-
-      res.status(200).json(result);
+      res.status(200).json({});
     } else {
       res.status(405).json({ message: 'Method Not Allowed' });
     }

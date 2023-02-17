@@ -1,10 +1,12 @@
+import { GetServerSideProps } from 'next';
+
+import sanity from '@/lib/sanity';
+
 import WebStoreContents from '@/contents/webstore';
 import Page from '@/contents-layouts/Page';
-import sanity from '@/lib/sanity';
-import { GetServerSideProps } from 'next';
 import { storeItemsQuery } from '@/queries';
 
-function WebStore({ items }) {
+function WebStore() {
   return (
     <Page
       frontMatter={{
@@ -12,7 +14,7 @@ function WebStore({ items }) {
         description: '',
       }}
     >
-      <WebStoreContents items={items} />
+      <WebStoreContents />
     </Page>
   );
 }

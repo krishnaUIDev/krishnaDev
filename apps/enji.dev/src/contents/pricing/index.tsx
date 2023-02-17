@@ -1,6 +1,6 @@
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import PricingCard from './PricingCard';
 
@@ -76,9 +76,9 @@ export default function PricingContents() {
     setUpdatedData(categories[category]);
   };
 
-  useEffect(() => {
-    setUpdatedData(categories && categories.Monthly);
-  }, []);
+  // useEffect(() => {
+  //   setUpdatedData(categories && categories.Monthly);
+  // }, []);
 
   return (
     <div className="flex items-center justify-center sm:px-0">
