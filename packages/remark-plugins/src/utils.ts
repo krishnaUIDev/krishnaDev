@@ -1,21 +1,25 @@
 /* eslint-disable no-plusplus */
 
-import { Parser } from 'acorn';
+import { Node, Parser } from 'acorn';
 import acornJsx from 'acorn-jsx';
 import fm from 'front-matter';
 import slug from 'slug';
 
 const ParserWithJSX = Parser.extend(acornJsx());
 
-const parse = (content) =>
+const parse = (content: string) =>
   ParserWithJSX.parse(content, {
     ecmaVersion: 2020,
     sourceType: 'module',
   });
 
-export const getFrontMatter = (content) => fm(content).attributes;
+export const getFrontMatter = (content: string) => fm(content).attributes;
 
-export const addImport = (tree, name, location) => {
+export const addImport = (
+  tree: { children: { type: string; data: { estree: Node } }[] },
+  name: any,
+  location: string
+) => {
   tree.children.unshift({
     type: 'mdxjsEsm',
     data: {
@@ -24,7 +28,7 @@ export const addImport = (tree, name, location) => {
   });
 };
 
-export const addContent = (tree, content) => {
+export const addContent = (tree: { children: any }, content: string) => {
   tree.children.push({
     type: 'mdxjsEsm',
     data: {
@@ -33,7 +37,7 @@ export const addContent = (tree, content) => {
   });
 };
 
-export const getTableOfContents = (tree) => {
+export const getTableOfContents = (tree: { children: any }) => {
   const contents = [];
 
   for (let nodeIndex = 0; nodeIndex < tree.children.length; nodeIndex++) {
@@ -42,8 +46,8 @@ export const getTableOfContents = (tree) => {
     if (node.type === 'heading' && [2, 3].includes(node.depth)) {
       const depth = node.depth - 1;
       const title = node.children
-        .filter((n) => n.type === 'text')
-        .map((n) => n.value)
+        .filter((n: { type: string }) => n.type === 'text')
+        .map((n: { value: any }) => n.value)
         .join('');
 
       contents.push({

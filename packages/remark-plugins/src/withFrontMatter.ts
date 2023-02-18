@@ -24,7 +24,7 @@ const ProjectFrontMatter = z.object({
   type: z.enum(['package']).default('package'),
 });
 
-const validate = (schema, data) => {
+const validate = (schema: any, data: any) => {
   try {
     return schema.parse(data);
   } catch (err) {
@@ -36,8 +36,8 @@ const validate = (schema, data) => {
   }
 };
 
-const withFrontMatter = () => (_tree, file) => {
-  const data = getFrontMatter(file.value);
+const withFrontMatter = () => (_tree: any, file: any) => {
+  const data = getFrontMatter(file.value) as {};
 
   // skip front matter validation
   if (Object.keys(data).length === 0) return;
