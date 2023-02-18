@@ -185,10 +185,6 @@ function Footer() {
                   title="Learn"
                   links={[
                     {
-                      title: 'Docs',
-                      href: '/docs',
-                    },
-                    {
                       title: 'Personal Blog',
                       href: '/blog',
                     },
