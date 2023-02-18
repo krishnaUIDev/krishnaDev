@@ -1,74 +1,77 @@
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 
 import PricingCard from './PricingCard';
 
 export default function PricingContents() {
-  const categories = {
-    Monthly: [
-      {
-        id: 1,
-        title: 'Starter',
-        description: 'Best option for personal use & for your next project.',
-        price: 15,
-        offer: [
-          'Individual configuration',
-          'Individual configuration',
-          'Individual configuration',
-        ],
-        primum: false,
-      },
-      {
-        id: 2,
-        title: 'Starter',
-        description: 'Best option for personal use & for your next project.',
-        price: 15,
-        offer: [
-          'Individual configuration',
-          'Individual configuration',
-          'Individual configuration',
-        ],
-        primum: false,
-      },
-      {
-        id: 3,
-        title: 'Starter',
-        description: 'Best option for personal use & for your next project.',
-        price: 415,
-        offer: [
-          'Individual configuration',
-          'Individual configuration',
-          'Individual configuration',
-        ],
-        primum: true,
-      },
-    ],
-    Annually: [
-      {
-        id: 1,
-        title: 'Starter',
-        description: 'Best option for personal use & for your next project.',
-        price: 1500,
-        offer: [
-          'Individual configuration',
-          'Individual configuration',
-          'Individual configuration',
-        ],
-      },
-      {
-        id: 2,
-        title: 'Starter',
-        description: 'Best option for personal use & for your next project.',
-        price: 150,
-        offer: [
-          'Individual configuration',
-          'Individual configuration',
-          'Individual configuration',
-        ],
-      },
-    ],
-  };
+  const categories = useMemo(
+    () => ({
+      Monthly: [
+        {
+          id: 1,
+          title: 'Starter',
+          description: 'Best option for personal use & for your next project.',
+          price: 15,
+          offer: [
+            'Individual configuration',
+            'Individual configuration',
+            'Individual configuration',
+          ],
+          primum: false,
+        },
+        {
+          id: 2,
+          title: 'Starter',
+          description: 'Best option for personal use & for your next project.',
+          price: 15,
+          offer: [
+            'Individual configuration',
+            'Individual configuration',
+            'Individual configuration',
+          ],
+          primum: false,
+        },
+        {
+          id: 3,
+          title: 'Starter',
+          description: 'Best option for personal use & for your next project.',
+          price: 415,
+          offer: [
+            'Individual configuration',
+            'Individual configuration',
+            'Individual configuration',
+          ],
+          primum: true,
+        },
+      ],
+      Annually: [
+        {
+          id: 1,
+          title: 'Starter',
+          description: 'Best option for personal use & for your next project.',
+          price: 1500,
+          offer: [
+            'Individual configuration',
+            'Individual configuration',
+            'Individual configuration',
+          ],
+        },
+        {
+          id: 2,
+          title: 'Starter',
+          description: 'Best option for personal use & for your next project.',
+          price: 150,
+          offer: [
+            'Individual configuration',
+            'Individual configuration',
+            'Individual configuration',
+          ],
+        },
+      ],
+    }),
+    []
+  );
 
   const [updatedData, setUpdatedData] = useState([]);
   const hasInitialData = useRef(false);
