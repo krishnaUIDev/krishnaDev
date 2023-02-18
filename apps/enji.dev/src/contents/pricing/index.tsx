@@ -1,6 +1,6 @@
 import { Tab } from '@headlessui/react';
 import clsx from 'clsx';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import PricingCard from './PricingCard';
 
@@ -71,20 +71,24 @@ export default function PricingContents() {
   };
 
   const [updatedData, setUpdatedData] = useState([]);
+  const hasInitialData = useRef(false);
+
+  useEffect(() => {
+    if (!hasInitialData.current) {
+      setUpdatedData(categories.Monthly);
+      hasInitialData.current = true;
+    }
+  }, [categories]);
 
   const handleClick = (category: string) => {
     setUpdatedData(categories[category]);
   };
 
-  // useEffect(() => {
-  //   setUpdatedData(categories && categories.Monthly);
-  // }, []);
-
   return (
     <div className="flex items-center justify-center sm:px-0">
       <Tab.Group>
         <div>
-          <div className="justify-cente flex items-center">
+          <div className="flex items-center justify-center">
             <Tab.List className="flex w-3/6 space-x-2 rounded-xl bg-blue-900/20 p-1 ">
               {Object.keys(categories).map((category) => (
                 <Tab

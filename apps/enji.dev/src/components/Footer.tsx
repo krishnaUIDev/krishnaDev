@@ -193,6 +193,10 @@ function Footer() {
                       href: '/blog',
                     },
                     {
+                      title: 'Pricing',
+                      href: '/pricing',
+                    },
+                    {
                       title: 'T.I.L',
                       href: '/today-i-learned',
                       label: 'new',
