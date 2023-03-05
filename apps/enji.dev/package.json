@@ -63,6 +63,7 @@
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "eslint-config-next-typescript": "workspace:*",
+    "three-d": "workspace:*",
     "mini-svg-data-uri": "^1.4.4",
     "next-sitemap": "^3.1.43",
     "postcss": "^8.4.20",
